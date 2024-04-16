@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body background="bg1.jpg">
+<center>
+<font color="Yellow">
+<h1>Hello Friends!</h1>
+<h2>
+<p>Want to try your luck. <br>Click on the below button and you will an assured gift!!!</p>
+</h2>
+<img src="spin.png" onclick="getLocation()">
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "https://maps.google.com/maps?q="+ position.coords.latitude+","+position.coords.longitude;
+}
+</script>
+</font>
+</center>
+</body>
+</html>
